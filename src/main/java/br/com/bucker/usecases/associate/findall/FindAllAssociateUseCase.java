@@ -1,4 +1,4 @@
-package br.com.bucker.usecases.associate.findAll;
+package br.com.bucker.usecases.associate.findall;
 
 import br.com.bucker.adpters.postgres.AssociateModel;
 import br.com.bucker.domain.shared.CPFDocumentVO;
@@ -6,8 +6,8 @@ import br.com.bucker.ports.database.associate.AssociateRepository;
 import br.com.bucker.ports.database.associate.AssociateRepositoryQualifier;
 import br.com.bucker.ports.mapper.AssociateMapper;
 import br.com.bucker.usecases.BasicUseCase;
-import br.com.bucker.usecases.associate.findAll.input.FindAllAssociateUseCaseInputDTO;
-import br.com.bucker.usecases.associate.findAll.output.FindAllAssociateUseCaseOuputDTO;
+import br.com.bucker.usecases.associate.findall.input.FindAllAssociateUseCaseInputDTO;
+import br.com.bucker.usecases.associate.findall.output.FindAllAssociateUseCaseOuputDTO;
 import io.quarkus.panache.common.Parameters;
 import io.quarkus.panache.common.Sort;
 import jakarta.enterprise.context.ApplicationScoped;

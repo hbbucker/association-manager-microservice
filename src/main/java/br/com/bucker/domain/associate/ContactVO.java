@@ -31,10 +31,5 @@ public class ContactVO implements BasicEntity {
     public Tenancy getTenant() {
         return this.tenant;
     }
-
-    @Override
-    public void validate() {
-        // do nothing
-    }
 }
 

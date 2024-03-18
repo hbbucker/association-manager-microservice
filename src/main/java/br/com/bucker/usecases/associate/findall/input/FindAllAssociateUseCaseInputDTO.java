@@ -1,7 +1,9 @@
-package br.com.bucker.usecases.associate.findAll.input;
+package br.com.bucker.usecases.associate.findall.input;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
+import lombok.Builder;
 
+@Builder
 @RegisterForReflection
 public record FindAllAssociateUseCaseInputDTO (
     Integer page,

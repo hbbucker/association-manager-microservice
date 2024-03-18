@@ -1,4 +1,4 @@
-package br.com.bucker.usecases.associate.findById.dto.output;
+package br.com.bucker.usecases.associate.findbyid.dto.output;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package br.com.bucker.usecases.associate.findAll.output;
+package br.com.bucker.usecases.associate.findall.output;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.Builder;

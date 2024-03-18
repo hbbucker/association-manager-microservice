@@ -1,4 +1,4 @@
-package br.com.bucker.usecases.associate.findById.dto.input;
+package br.com.bucker.usecases.associate.findbyid.dto.input;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.AccessLevel;
@@ -9,8 +9,6 @@ import lombok.Getter;
 import java.util.UUID;
 
 @Builder
-@Getter
 @RegisterForReflection
-@AllArgsConstructor(access = AccessLevel.PACKAGE)
 public record FindByIdAssociateUseCaseInputDTO (UUID id){
 }

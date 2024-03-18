@@ -33,7 +33,7 @@ public abstract class Notifications implements BasicValidation {
         this.notifications.addAll(notifications);
     }
 
-    public Boolean isValid() {
+    public boolean isValid() {
         return this.notifications.isEmpty();
     }
 

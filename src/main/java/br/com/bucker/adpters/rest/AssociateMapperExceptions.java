@@ -2,7 +2,7 @@ package br.com.bucker.adpters.rest;
 
 import br.com.bucker.shared.dto.ResponseErrorsDomainExceptionDTO;
 import br.com.bucker.shared.dto.ResponseExceptionDTO;
-import br.com.bucker.usecases.associate.findById.FindByIdAssociateUseCaseException;
+import br.com.bucker.usecases.associate.findbyid.FindByIdAssociateUseCaseException;
 import br.com.bucker.usecases.associate.insert.InsertAssociateException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

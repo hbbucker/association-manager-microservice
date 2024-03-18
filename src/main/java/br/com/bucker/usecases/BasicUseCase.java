@@ -1,5 +1,5 @@
 package br.com.bucker.usecases;
 
-public interface BasicUseCase<IN,OUT,E extends Exception> {
-    OUT execute(IN input) throws E;
+public interface BasicUseCase<I, O, E extends Exception> {
+    O execute(I input) throws E;
 }

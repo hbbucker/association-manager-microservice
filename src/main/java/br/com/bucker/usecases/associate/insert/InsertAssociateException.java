@@ -4,8 +4,8 @@ import lombok.Getter;
 
 @Getter
 public class InsertAssociateException extends Exception {
-    String key;
-    String errors;
+    final String key;
+    final String errors;
 
     public InsertAssociateException(String key, String errors, String message) {
         super(message);

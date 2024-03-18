@@ -5,8 +5,8 @@ import br.com.bucker.adpters.postgres.ContactModel;
 import br.com.bucker.domain.associate.AssociateEntity;
 import br.com.bucker.domain.associate.ContactVO;
 import br.com.bucker.ports.mapper.AssociateMapper;
-import br.com.bucker.usecases.associate.findAll.output.FindAllAssociateUseCaseOuputDTO;
-import br.com.bucker.usecases.associate.findById.dto.output.FindByIdAssociateUseCaseOutputDTO;
+import br.com.bucker.usecases.associate.findall.output.FindAllAssociateUseCaseOuputDTO;
+import br.com.bucker.usecases.associate.findbyid.dto.output.FindByIdAssociateUseCaseOutputDTO;
 import br.com.bucker.usecases.associate.insert.dto.input.InsertAssociateUseCaseInputDTO;
 import br.com.bucker.usecases.associate.insert.dto.output.InsertAssociateUseCaseOutupuDTO;
 import org.mapstruct.Mapper;
@@ -97,14 +97,21 @@ public interface AssociateUseCaseMapper extends AssociateMapper {
     })
     InsertAssociateUseCaseOutupuDTO toInsertAssociateOutput(AssociateEntity associateEntity);
 
-    @Mapping(target = "associates", source = "associateModel")
-    FindAllAssociateUseCaseOuputDTO toFindAllOutput(List<AssociateModel> associateModel);
+    default FindAllAssociateUseCaseOuputDTO toFindAllOutput(List<AssociateModel> associatesModel){
+        List<FindAllAssociateUseCaseOuputDTO.Associate> associates = associatesModel.stream()
+                .map(this::toAssociate)
+                .toList();
+
+        return FindAllAssociateUseCaseOuputDTO.builder()
+                .associates(associates)
+                .build();
+    }
 
     @Mappings({
-            @Mapping(target = "cpf", source = "documents.cpf.cpf"),
-            @Mapping(target = "city", source = "address.city"),
-            @Mapping(target = "state", source = "address.state"),
-            @Mapping(target = "country", source = "address.country")
+            @Mapping(target = "cpf", source = "cpf"),
+            @Mapping(target = "city", source = "city"),
+            @Mapping(target = "state", source = "state"),
+            @Mapping(target = "country", source = "country")
     })
     FindAllAssociateUseCaseOuputDTO.Associate toAssociate(AssociateModel associateModel);
 

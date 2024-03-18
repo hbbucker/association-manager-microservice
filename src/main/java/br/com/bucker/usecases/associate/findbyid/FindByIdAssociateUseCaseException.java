@@ -1,12 +1,12 @@
-package br.com.bucker.usecases.associate.findById;
+package br.com.bucker.usecases.associate.findbyid;
 
 import lombok.Getter;
 
 public class FindByIdAssociateUseCaseException extends Exception {
     @Getter
-    String key;
+    final String key;
     @Getter
-    String errors;
+    final String errors;
 
     public FindByIdAssociateUseCaseException(String key, String errors, String message) {
         super(message);

@@ -1,4 +1,4 @@
-package br.com.bucker.usecases.associate.findById;
+package br.com.bucker.usecases.associate.findbyid;
 
 import br.com.bucker.adpters.postgres.AssociateModel;
 import br.com.bucker.domain.associate.AssociateEntity;
@@ -6,8 +6,8 @@ import br.com.bucker.ports.database.associate.AssociateRepository;
 import br.com.bucker.ports.database.associate.AssociateRepositoryQualifier;
 import br.com.bucker.ports.mapper.AssociateMapper;
 import br.com.bucker.usecases.BasicUseCase;
-import br.com.bucker.usecases.associate.findById.dto.input.FindByIdAssociateUseCaseInputDTO;
-import br.com.bucker.usecases.associate.findById.dto.output.FindByIdAssociateUseCaseOutputDTO;
+import br.com.bucker.usecases.associate.findbyid.dto.input.FindByIdAssociateUseCaseInputDTO;
+import br.com.bucker.usecases.associate.findbyid.dto.output.FindByIdAssociateUseCaseOutputDTO;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
@@ -29,7 +29,7 @@ public class FindByIdAssociateUseCase implements BasicUseCase<FindByIdAssociateU
 
     @Override
     public FindByIdAssociateUseCaseOutputDTO execute(FindByIdAssociateUseCaseInputDTO input) throws FindByIdAssociateUseCaseException {
-        Optional<AssociateModel> associateModel = repository.getByUuid(input.getId());
+        Optional<AssociateModel> associateModel = repository.getByUuid(input.id());
         if (associateModel.isEmpty()) {
             throw new FindByIdAssociateUseCaseException("associate.not.found", "Associate not found", "Associate not found");
         }

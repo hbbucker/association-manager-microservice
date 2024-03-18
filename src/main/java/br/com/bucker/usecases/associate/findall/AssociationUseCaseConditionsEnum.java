@@ -1,4 +1,4 @@
-package br.com.bucker.usecases.associate.findAll;
+package br.com.bucker.usecases.associate.findall;
 
 import lombok.Getter;
 

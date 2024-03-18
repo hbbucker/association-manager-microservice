@@ -4,8 +4,8 @@ import br.com.bucker.adpters.postgres.AssociateModel;
 import br.com.bucker.adpters.postgres.ContactModel;
 import br.com.bucker.domain.associate.AssociateEntity;
 import br.com.bucker.domain.associate.ContactVO;
-import br.com.bucker.usecases.associate.findAll.output.FindAllAssociateUseCaseOuputDTO;
-import br.com.bucker.usecases.associate.findById.dto.output.FindByIdAssociateUseCaseOutputDTO;
+import br.com.bucker.usecases.associate.findall.output.FindAllAssociateUseCaseOuputDTO;
+import br.com.bucker.usecases.associate.findbyid.dto.output.FindByIdAssociateUseCaseOutputDTO;
 import br.com.bucker.usecases.associate.insert.dto.input.InsertAssociateUseCaseInputDTO;
 import br.com.bucker.usecases.associate.insert.dto.output.InsertAssociateUseCaseOutupuDTO;
 
