@@ -11,7 +11,6 @@ import java.util.UUID;
 @Builder
 @RegisterForReflection
 public record AssociateRestOutputDTO(
-
         @RestLinkId
         UUID id,
         String name,

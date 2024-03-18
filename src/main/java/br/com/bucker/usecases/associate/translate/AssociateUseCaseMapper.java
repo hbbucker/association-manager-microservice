@@ -9,13 +9,14 @@ import br.com.bucker.usecases.associate.findall.output.FindAllAssociateUseCaseOu
 import br.com.bucker.usecases.associate.findbyid.dto.output.FindByIdAssociateUseCaseOutputDTO;
 import br.com.bucker.usecases.associate.insert.dto.input.InsertAssociateUseCaseInputDTO;
 import br.com.bucker.usecases.associate.insert.dto.output.InsertAssociateUseCaseOutupuDTO;
+import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "jakarta")
+@Mapper(componentModel = "cdi", injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface AssociateUseCaseMapper extends AssociateMapper {
 
     @Mappings({

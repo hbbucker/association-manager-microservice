@@ -5,16 +5,18 @@ import br.com.bucker.adpters.rest.dto.output.AssociateRestOutputDTO;
 import br.com.bucker.usecases.associate.findbyid.dto.output.FindByIdAssociateUseCaseOutputDTO;
 import br.com.bucker.usecases.associate.insert.dto.input.InsertAssociateUseCaseInputDTO;
 import br.com.bucker.usecases.associate.insert.dto.output.InsertAssociateUseCaseOutupuDTO;
-import org.jetbrains.annotations.NotNull;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Mappings;
 
-@Mapper(componentModel = "jarkata")
+@Mapper(componentModel = "cdi", injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface AssociateRestMapper {
 
-    AssociateRestOutputDTO toOutput(@NotNull FindByIdAssociateUseCaseOutputDTO findByIdAssociateUseCaseOutputDTO);
+    @Mapping(target = "name", source = "name")
+    AssociateRestOutputDTO toOutput(FindByIdAssociateUseCaseOutputDTO findByIdAssociateUseCaseOutputDTO);
 
-    AssociateRestOutputDTO toOutput(@NotNull InsertAssociateUseCaseOutupuDTO output);
+    AssociateRestOutputDTO toOutput(InsertAssociateUseCaseOutupuDTO output);
 
-    InsertAssociateUseCaseInputDTO toInsertInput(@NotNull AssociateRestInputDTO input);
+    InsertAssociateUseCaseInputDTO toInsertInput(AssociateRestInputDTO input);
 }

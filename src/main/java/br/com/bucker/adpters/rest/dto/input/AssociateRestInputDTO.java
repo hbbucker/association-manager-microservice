@@ -18,6 +18,7 @@ public record AssociateRestInputDTO(
         LocalDate birthDate
 ) {
     @Builder
+    @RegisterForReflection
     public record PersonalDocument(
             String cpf,
             String rg,
@@ -25,6 +26,7 @@ public record AssociateRestInputDTO(
     }
 
     @Builder
+    @RegisterForReflection
     public record MilitaryPersonnelInformation(
             String trainingRegiment,
             LocalDate aspirantDate,
@@ -33,6 +35,7 @@ public record AssociateRestInputDTO(
     }
 
     @Builder
+    @RegisterForReflection
     public record Address(
             String street,
             String number,
@@ -44,6 +47,7 @@ public record AssociateRestInputDTO(
     }
 
     @Builder
+    @RegisterForReflection
     public record Contact(String phone, String email) {
     }
 }
