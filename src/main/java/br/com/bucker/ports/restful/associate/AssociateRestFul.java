@@ -8,7 +8,6 @@ import br.com.bucker.usecases.associate.findall.FindAllAssociateUseCaseException
 import br.com.bucker.usecases.associate.findbyid.FindByIdAssociateUseCaseException;
 import br.com.bucker.usecases.associate.insert.InsertAssociateUseCaseException;
 
-import java.util.List;
 import java.util.UUID;
 
 public interface AssociateRestFul {
