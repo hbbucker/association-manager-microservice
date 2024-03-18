@@ -54,6 +54,6 @@ public class CPFDocumentVO extends Notifications implements BasicValidation {
     }
 
     private String removeString() {
-        return cpf.replaceAll("[^0-9]", "");
+        return cpf.replaceAll("\\D", "");
     }
 }

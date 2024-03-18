@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 @Builder
 @RegisterForReflection
-public class FindAllAssociateRestInputDTO {
+public class FindAllAssociateRestOutputDTO {
     Integer page;
     Integer pageSize;
     Integer total;

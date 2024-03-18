@@ -3,7 +3,7 @@ package br.com.bucker.usecases.associate;
 import br.com.bucker.adpters.postgres.AssociateModel;
 import br.com.bucker.domain.associate.AssociateEntity;
 import br.com.bucker.ports.database.associate.AssociateRepository;
-import br.com.bucker.usecases.associate.insert.InsertAssociateException;
+import br.com.bucker.usecases.associate.insert.InsertAssociateUseCaseException;
 import br.com.bucker.usecases.associate.insert.InsertAssociateUseCase;
 import br.com.bucker.usecases.associate.insert.dto.input.InsertAssociateUseCaseInputDTO;
 import br.com.bucker.usecases.associate.insert.dto.output.InsertAssociateUseCaseOutupuDTO;
@@ -47,7 +47,7 @@ class InsertAssociateUseCaseTest {
     }
 
     @Test
-    void should_execute_usecase() throws InsertAssociateException {
+    void should_execute_usecase() throws InsertAssociateUseCaseException {
         InsertAssociateUseCaseInputDTO associateInput = InserAssociateUseCaseHelper
                 .createInput();
         AssociateEntity associate = InserAssociateUseCaseHelper
@@ -65,7 +65,7 @@ class InsertAssociateUseCaseTest {
 
         InsertAssociateUseCaseOutupuDTO output = usecase.execute(associateInput);
 
-        verify(repository).save(any(AssociateModel.class));
+        verify(repository).saveOrUpdate(any(AssociateModel.class));
         assertNotNull(output);
     }
 
@@ -86,10 +86,10 @@ class InsertAssociateUseCaseTest {
         //when(translate.toDomain(associateInput)).thenReturn(associate);
         //when(translate.toOutput(associate)).thenReturn(associateOutput);
 
-        InsertAssociateException exception = assertThrows(InsertAssociateException.class,
+        InsertAssociateUseCaseException exception = assertThrows(InsertAssociateUseCaseException.class,
                 () -> usecase.execute(associateInput));
 
-        verify(repository, never()).save(any(AssociateModel.class));
+        verify(repository, never()).saveOrUpdate(any(AssociateModel.class));
         assertEquals("associate.insert.error", exception.getKey());
         assertEquals("Associate is not valid", exception.getMessage());
         assertEquals("[{\"domain\":\"street\",\"message\":\"Address is required\"}]", exception.getErrors());
@@ -112,10 +112,10 @@ class InsertAssociateUseCaseTest {
         //when(translate.toDomain(associateInput)).thenReturn(associate);
         //when(translate.toOutput(associate)).thenReturn(associateOutput);
 
-        InsertAssociateException exception = assertThrows(InsertAssociateException.class,
+        InsertAssociateUseCaseException exception = assertThrows(InsertAssociateUseCaseException.class,
                 () -> usecase.execute(associateInput));
 
-        verify(repository, never()).save(any(AssociateModel.class));
+        verify(repository, never()).saveOrUpdate(any(AssociateModel.class));
         assertEquals("associate.insert.error", exception.getKey());
         assertEquals("Associate is not valid", exception.getMessage());
         assertEquals("[{\"domain\":\"document\",\"message\":\"Documents is required\"}]", exception.getErrors());

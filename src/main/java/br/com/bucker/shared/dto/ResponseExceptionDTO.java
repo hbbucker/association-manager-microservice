@@ -1,7 +1,6 @@
 package br.com.bucker.shared.dto;
 
 import lombok.Builder;
-import lombok.ToString;
 
 import java.util.Arrays;
 import java.util.Objects;

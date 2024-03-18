@@ -17,9 +17,7 @@ public interface AssociateRepository<M> extends PanacheRepository<M> {
 
     List<M> findAllPaging(String stringQuery, Parameters parameters, Sort sort, int page, int pageSize);
 
-    void save(M associateEntity);
-
-    void update(M associateEntity);
+    void saveOrUpdate(M associateEntity);
 
     void delete(UUID id);
 }

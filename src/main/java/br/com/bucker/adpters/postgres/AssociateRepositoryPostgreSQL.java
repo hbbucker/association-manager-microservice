@@ -45,14 +45,7 @@ public class AssociateRepositoryPostgreSQL implements AssociateRepository<Associ
 
     @Override
     @Transactional
-    public void save(AssociateModel associateEntity) {
-        associateEntity.contacts.forEach(contact -> contact.associate = associateEntity);
-        persist(associateEntity);
-    }
-
-    @Override
-    @Transactional
-    public void update(AssociateModel associateEntity) {
+    public void saveOrUpdate(AssociateModel associateEntity) {
         associateEntity.contacts.forEach(contact -> contact.associate = associateEntity);
         persist(associateEntity);
     }

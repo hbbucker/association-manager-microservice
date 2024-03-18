@@ -29,14 +29,14 @@ public class RGDocumentVO extends Notifications implements BasicValidation {
         }
 
         if (rgOrgExpeditor == null) {
-            addNotification("document.rg", "RG Org expeditor is required");
+            addNotification("document.rgOrgExpeditor", "RG Org expeditor is required");
         }
 
         this.rgOrgExpeditor = this.removeNumbers();
         this.rg = this.removeString();
 
         if (rg.length() < 6 || !rg.chars().allMatch(Character::isDigit)) {
-            addNotification("document.rg", rg + " is not a valid RG number");
+            addNotification("document.rg.number", rg + " is not a valid RG number");
         }
     }
 
@@ -49,6 +49,6 @@ public class RGDocumentVO extends Notifications implements BasicValidation {
     }
 
     private String removeString() {
-        return rg.replaceAll("[^0-9]", "");
+        return rg.replaceAll("\\D", "");
     }
 }
