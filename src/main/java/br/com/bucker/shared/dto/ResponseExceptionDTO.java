@@ -26,4 +26,13 @@ public record ResponseExceptionDTO(
         result = 31 * result + Arrays.hashCode(errors);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "ResponseExceptionDTO{" +
+                "key='" + key + '\'' +
+                ", message='" + message + '\'' +
+                ", errors=" + Arrays.toString(errors) +
+                '}';
+    }
 }
